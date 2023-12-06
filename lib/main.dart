@@ -1,3 +1,4 @@
+import 'package:blog_app/styles/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'login_reg.dart';
 
@@ -15,7 +16,8 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Blog App',
       theme:  ThemeData(
-        // primarySwatch: Colors.pink,
+        fontFamily: "Urbanist",
+        scaffoldBackgroundColor: AppColors.background,
       ),
       home: const LoginRegisterPage(),
     );

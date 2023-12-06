@@ -13,148 +13,170 @@ class _LoginRegisterPageState extends State<LoginRegisterPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.blue,
-      body: Column(
-        children: [
-          Text(
-            "Hello, Welcome Back!",
-            style: TextStyle(
-              color: Colors.white,
-              fontSize: 22.0,
-              fontWeight: FontWeight.bold,
+      body: Padding(
+        padding: EdgeInsets.all(34.0),
+        child: Column(
+          children: [
+            SizedBox(
+              height: 68,
             ),
-          ),
-          SizedBox(
-            height: 15.0,
-          ),
-          Text(
-            "Login to continue",
-            style: TextStyle(color: Colors.white),
-          ),
-          TextField(
-            decoration: InputDecoration(
-              hintText: "Username",
-              border: OutlineInputBorder(
-                borderRadius: BorderRadius.all(
-                  Radius.circular(22.0),
-                ),
+            Text(
+              "Hello, Welcome Back!",
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 22.0,
+                fontWeight: FontWeight.bold,
               ),
-              filled: true,
-              fillColor: Colors.white.withOpacity(0.5),
             ),
-          ),
-          SizedBox(
-            height: 22,
-          ),
-          TextField(
-            decoration: InputDecoration(
-              hintText: "Password",
-              border: OutlineInputBorder(
-                borderRadius: BorderRadius.all(
-                  Radius.circular(22.0),
-                ),
-              ),
-              filled: true,
-              fillColor: Colors.white.withOpacity(0.5),
+            SizedBox(
+              height: 15.0,
             ),
-          ),
-          SizedBox(
-            height: 22,
-          ),
-          Align(
-            alignment: Alignment.centerRight,
-            child: TextButton(
-              onPressed: () {},
-              style: TextButton.styleFrom(
-                foregroundColor: Colors.white,
-              ),
-              child: Text("Forget Password?"),
+            Text(
+              "Login to continue",
+              style: TextStyle(color: Colors.white),
             ),
-          ),
-          SizedBox(
-            height: 22,
-          ),
-          SizedBox(
-            width: 250,
-            child: ElevatedButton(
-              onPressed: () {},
-              style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.amber,
-                foregroundColor: Colors.black,
-              ),
-              child: Text("Log in"),
+            SizedBox(
+              height: 68,
             ),
-          ),
-          SizedBox(
-            height: 22,
-          ),
-          Text("Or Sig in With?"),
-          ElevatedButton(
-            onPressed: () {},
-            style: ElevatedButton.styleFrom(
-                foregroundColor: Colors.black,
-                backgroundColor: Colors.white,
-                shape: RoundedRectangleBorder(
+            TextField(
+              decoration: InputDecoration(
+                hintText: "Username",
+                border: OutlineInputBorder(
                   borderRadius: BorderRadius.all(
-                    Radius.circular(50),
+                    Radius.circular(22.0),
                   ),
-                )),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Image(
-                  image: AssetImage("assets/google.png"),
-                  width: 22,
-                  height: 22,
                 ),
-                SizedBox(width: 8),
-                Text("Sign in With Google"),
-              ],
-            ),
-          ),
-          SizedBox(
-            height: 22,
-          ),
-          ElevatedButton(
-            onPressed: () {},
-            style: ElevatedButton.styleFrom(
-                foregroundColor: Colors.black,
-                backgroundColor: Colors.white,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.all(
-                    Radius.circular(50),
-                  ),
-                )),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Image(
-                  image: AssetImage("assets/facebook.png"),
-                  width: 22,
-                  height: 22,
-                ),
-                SizedBox(
-                  width: 8,
-                ),
-                Text("Sign in With Facebook"),
-              ],
-            ),
-          ),
-          Row(
-            children: [
-              Text(
-                "Don't have an Account?",
-                style: TextStyle(
-                  color: Colors.white,
-                ),
+                filled: true,
+                fillColor: Colors.white.withOpacity(0.5),
               ),
-              TextButton(
+            ),
+            SizedBox(
+              height: 22,
+            ),
+            TextField(
+              decoration: InputDecoration(
+                hintText: "Password",
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.all(
+                    Radius.circular(22.0),
+                  ),
+                ),
+                filled: true,
+                fillColor: Colors.white.withOpacity(0.5),
+              ),
+            ),
+            SizedBox(
+              height: 22,
+            ),
+            Align(
+              alignment: Alignment.centerRight,
+              child: TextButton(
                 onPressed: () {},
-                child: Text("Sign Up"),
+                style: TextButton.styleFrom(
+                  foregroundColor: Colors.white,
+                ),
+                child: Text("Forget Password?"),
               ),
-            ],
-          )
-        ],
+            ),
+            SizedBox(
+              height: 22,
+            ),
+            SizedBox(
+              width: 250,
+              child: ElevatedButton(
+                onPressed: () {},
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.amber,
+                  foregroundColor: Colors.black,
+                ),
+                child: Text("Log in"),
+              ),
+            ),
+            SizedBox(
+              height: 22,
+            ),
+            Text("Or Sig in With?"),
+            SizedBox(
+              height: 48,
+              child: ElevatedButton(
+                onPressed: () {},
+                style: ElevatedButton.styleFrom(
+                    foregroundColor: Colors.black,
+                    backgroundColor: Colors.white,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.all(
+                        Radius.circular(50),
+                      ),
+                    )),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Image(
+                      image: AssetImage("assets/images/google.png"),
+                      width: 22,
+                      height: 22,
+                    ),
+                    SizedBox(width: 8),
+                    Text("Sign in With Google"),
+                  ],
+                ),
+              ),
+            ),
+            SizedBox(height: 22,),
+            SizedBox(
+              height: 48,
+              child: ElevatedButton(
+                onPressed: () {},
+                style: ElevatedButton.styleFrom(
+                  foregroundColor: Colors.black,
+                  backgroundColor: Colors.white,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.all(
+                      Radius.circular(50),
+                    ),
+                  ),
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Image(
+                      image: AssetImage("assets/images/facebook.png"),
+                      width: 22,
+                      height: 22,
+                    ),
+                    SizedBox(
+                      width: 8,
+                    ),
+                    Text("Sign in With Facebook"),
+                  ],
+                ),
+              ),
+            ),
+            Row(
+              children: [
+                Text(
+                  "Don't have an Account?",
+                  style: TextStyle(
+                    color: Colors.white,
+                  ),
+                ),
+                TextButton(
+                  onPressed: () {},
+                  style: TextButton.styleFrom(
+                    foregroundColor: Colors.amber,
+                  ),
+                  child: Text(
+                    "Sign Up",
+                    style: TextStyle(
+                      decoration: TextDecoration.underline,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            Spacer(),
+          ],
+        ),
       ),
     );
   }
