@@ -82,7 +82,8 @@ class _LoginRegisterPageState extends State<LoginRegisterPage> {
               height: 22,
             ),
             SizedBox(
-              width: 250,
+              height: 48,
+              width: double.infinity,
               child: ElevatedButton(
                 onPressed: () {},
                 style: ElevatedButton.styleFrom(
