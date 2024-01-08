@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
+// ignore: unused_import
 import 'package:blog_app/pages/home_page.dart';
 import 'package:flutter/material.dart';
 
@@ -89,13 +90,7 @@ class _LoginRegisterPageState extends State<LoginRegisterPage> {
                   width: double.infinity,
                   child: ElevatedButton(
                     onPressed: () {
-                      Navigator.of(context).push(
-                        MaterialPageRoute(
-                          builder: (context) {
-                            return HomePage();
-                          },
-                        ),
-                      );
+                      Navigator.of(context).pushReplacementNamed('/home');
                     },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.amber,

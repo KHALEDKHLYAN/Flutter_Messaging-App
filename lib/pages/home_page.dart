@@ -6,6 +6,10 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        centerTitle: true,
+        title: Text('5minutesFlutter'),
+      ),
       body: Center(
         child: Text('Hello Welcome to Home Page'),
       ),
