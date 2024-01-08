@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
+import 'package:blog_app/pages/home_page.dart';
 import 'package:flutter/material.dart';
 
 class LoginRegisterPage extends StatefulWidget {
@@ -87,7 +88,15 @@ class _LoginRegisterPageState extends State<LoginRegisterPage> {
                   height: 48,
                   width: double.infinity,
                   child: ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) {
+                            return HomePage();
+                          },
+                        ),
+                      );
+                    },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.amber,
                       foregroundColor: Colors.black,
