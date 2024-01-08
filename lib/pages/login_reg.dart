@@ -125,7 +125,9 @@ class _LoginRegisterPageState extends State<LoginRegisterPage> {
                     ),
                   ),
                 ),
-                SizedBox(height: 22,),
+                SizedBox(
+                  height: 22,
+                ),
                 SizedBox(
                   height: 48,
                   child: ElevatedButton(
@@ -177,20 +179,7 @@ class _LoginRegisterPageState extends State<LoginRegisterPage> {
                     ),
                   ],
                 ),
-                TextField(
-                  decoration: InputDecoration(
-                    hintText: "Password",
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(22.0),
-                      ),
-                    ),
-                    filled: true,
-                    fillColor: Colors.white.withOpacity(0.5),
-                  ),
-                ),
                 Spacer(),
-                
               ],
             ),
           ),
