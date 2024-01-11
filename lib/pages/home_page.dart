@@ -3,6 +3,8 @@
 import 'package:blog_app/styles/app_colors.dart';
 import 'package:flutter/material.dart';
 
+import '../components/post_items.dart';
+
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
@@ -24,28 +26,11 @@ class HomePage extends StatelessWidget {
       ),
     );
   }
-
-  Widget _userItem() {
-    return Row(
-      children: [
-        Image.asset(
-          'assets/temp/bao.png',
-          width: 75,
-          height: 75,
-        ),
-        SizedBox(
-          width: 20,
-        ),
-        Text('Sara Farnandez'),
-      ],
-    );
-  }
-
   List<Widget> mockUsersFromServer() {
     List<Widget> users = [];
 
     for (var i = 0; i < 1000; i++) {
-      users.add(_userItem());
+      users.add(PostItems());
     }
     return users;
   }
