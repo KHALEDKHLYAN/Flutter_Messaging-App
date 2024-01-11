@@ -2,6 +2,7 @@
 
 import 'package:blog_app/pages/home_page.dart';
 import 'package:blog_app/pages/main_page.dart';
+import 'package:blog_app/pages/test_page.dart';
 import 'package:blog_app/styles/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'pages/login_reg.dart';
@@ -28,6 +29,7 @@ class MyApp extends StatelessWidget {
         '/': (context) => LoginRegisterPage(),
         '/home': (context) => HomePage(),
         '/main': (context) => MainPage(),
+        '/testpage': (context) => TestPage(),
       },
     );
   }
