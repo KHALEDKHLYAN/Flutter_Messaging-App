@@ -2,9 +2,15 @@
 
 import 'package:flutter/material.dart';
 
-class TestPage extends StatelessWidget {
-  final int count = 3;
+class TestPage extends StatefulWidget {
   const TestPage({super.key});
+
+  @override
+  State<TestPage> createState() => _TestPageState();
+}
+
+class _TestPageState extends State<TestPage> {
+   int count = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -13,10 +19,20 @@ class TestPage extends StatelessWidget {
         title: Text("Flotting Button"),
       ),
       body: Center(
-        child: Text('This is Counter $count', style: TextStyle(color: Colors.white, fontWeight: FontWeight.w500, fontSize: 35),),
+        child: Text(
+          'This is Counter. $count',
+          style: TextStyle(
+              color: Colors.white, fontWeight: FontWeight.w500, fontSize: 35),
+        ),
       ),
-      floatingActionButton: FloatingActionButton(onPressed: (){},
-      child: Icon(Icons.add),),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          setState(() {
+            count++;
+          });
+        },
+        child: Icon(Icons.add),
+      ),
     );
   }
 }

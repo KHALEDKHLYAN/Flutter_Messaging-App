@@ -90,7 +90,7 @@ class _LoginRegisterPageState extends State<LoginRegisterPage> {
                   width: double.infinity,
                   child: ElevatedButton(
                     onPressed: () {
-                      Navigator.of(context).pushReplacementNamed('/testpage');
+                      Navigator.of(context).pushReplacementNamed('/main');
                     },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.amber,
