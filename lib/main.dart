@@ -1,4 +1,7 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:blog_app/pages/home_page.dart';
+import 'package:blog_app/pages/main_page.dart';
 import 'package:blog_app/styles/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'pages/login_reg.dart';
@@ -24,6 +27,7 @@ class MyApp extends StatelessWidget {
       routes: {
         '/': (context) => LoginRegisterPage(),
         '/home': (context) => HomePage(),
+        '/main': (context) => MainPage(),
       },
     );
   }
