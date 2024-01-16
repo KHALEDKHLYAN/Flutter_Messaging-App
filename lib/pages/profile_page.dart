@@ -2,6 +2,7 @@
 
 import 'package:blog_app/styles/app_text.dart';
 import 'package:flutter/material.dart';
+import '../components/toolbar.dart';
 
 class ProfilePage extends StatelessWidget {
   const ProfilePage({super.key});
@@ -9,6 +10,13 @@ class ProfilePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: Toolbar(
+        title: 'Profile',
+        actions: [
+          IconButton( onPressed: (){},
+          icon: Icon(Icons.more_vert_outlined),)
+        ],
+      ),
       body: Column(
         children: [
           Image.asset(
@@ -21,6 +29,7 @@ class ProfilePage extends StatelessWidget {
             'Mombasa 001',
             style: AppText.subtitle2,
           ),
+          SizedBox(height: 12,),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
