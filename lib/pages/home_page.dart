@@ -1,15 +1,17 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, must_be_immutable
 
+import 'package:blog_app/components/post_items.dart';
 import 'package:blog_app/styles/app_colors.dart';
 import 'package:flutter/material.dart';
 
-import '../components/post_items.dart';
-
 class HomePage extends StatelessWidget {
-  const HomePage({super.key});
+  HomePage({super.key});
+
+  List<String> users = [];
 
   @override
   Widget build(BuildContext context) {
+    mockUsersFromServer();
     return Scaffold(
       appBar: AppBar(
         centerTitle: false,
@@ -21,17 +23,15 @@ class HomePage extends StatelessWidget {
         backgroundColor: AppColors.background,
         foregroundColor: AppColors.white,
       ),
-      body: ListView(
-        children: mockUsersFromServer(),
-      ),
+      body: ListView.builder(itemBuilder: (context, index) {
+        return PostItems();
+      }),
     );
   }
-  List<Widget> mockUsersFromServer() {
-    List<Widget> users = [];
 
+  mockUsersFromServer() {
     for (var i = 0; i < 1000; i++) {
-      users.add(PostItems());
+      users.add('User Number $i');
     }
-    return users;
   }
 }

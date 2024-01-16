@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:blog_app/pages/home_page.dart';
+import 'package:blog_app/pages/profile_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -58,6 +59,6 @@ class _MainPageState extends State<MainPage> {
     Center( child: Text('Favorite'),),
     Center( child: Text('add'),),
     Center( child: Text('message'),),
-    Center( child: Text('user'),),
+    ProfilePage(),
   ];
 }
