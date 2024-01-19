@@ -1,8 +1,10 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, avoid_print
 
 import 'package:blog_app/styles/app_text.dart';
 import 'package:flutter/material.dart';
 import '../components/toolbar.dart';
+
+enum ProfileMenu { edit, logout }
 
 class ProfilePage extends StatelessWidget {
   const ProfilePage({super.key});
@@ -13,8 +15,37 @@ class ProfilePage extends StatelessWidget {
       appBar: Toolbar(
         title: 'Profile',
         actions: [
-          IconButton( onPressed: (){},
-          icon: Icon(Icons.more_vert_outlined),)
+          PopupMenuButton<ProfileMenu>(onSelected: (value) {
+            switch (value) {
+              case ProfileMenu.edit:
+                break;
+              case ProfileMenu.logout:
+                print('log out');
+                break;
+              default:
+            }
+          }, itemBuilder: (context) {
+            return [
+              PopupMenuItem(
+                value: ProfileMenu.edit,
+                child: Row(
+                  children: [
+                    Icon(Icons.edit),
+                    Text('Edit'),
+                  ],
+                ),
+              ),
+              PopupMenuItem(
+                value: ProfileMenu.logout,
+                child: Row(
+                  children: [
+                    Icon(Icons.login_outlined),
+                    Text('Login'),
+                  ],
+                ),
+              )
+            ];
+          })
         ],
       ),
       body: Column(
@@ -29,7 +60,9 @@ class ProfilePage extends StatelessWidget {
             'Mombasa 001',
             style: AppText.subtitle2,
           ),
-          SizedBox(height: 12,),
+          SizedBox(
+            height: 12,
+          ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
