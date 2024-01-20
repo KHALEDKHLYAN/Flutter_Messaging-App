@@ -4,6 +4,7 @@ import 'package:blog_app/components/post_items.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import '../components/toolbar.dart';
+import '../config/app_strings.dart';
 
 class HomePage extends StatelessWidget {
   HomePage({super.key});
@@ -15,7 +16,7 @@ class HomePage extends StatelessWidget {
     mockUsersFromServer();
     return Scaffold(
       appBar: Toolbar(
-        title: "5minuteFlutter",
+        title: AppStrings.appName,
         actions: [
           IconButton(onPressed: (){}, icon: SvgPicture.asset('assets/svg/ic_location.svg'),)
         ],

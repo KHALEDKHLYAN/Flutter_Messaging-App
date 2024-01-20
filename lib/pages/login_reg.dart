@@ -1,8 +1,7 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
-
-// ignore: unused_import
-import 'package:blog_app/pages/home_page.dart';
+import 'package:blog_app/config/app_routes.dart';
 import 'package:flutter/material.dart';
+import '../config/app_strings.dart';
 
 class LoginRegisterPage extends StatefulWidget {
   const LoginRegisterPage({super.key});
@@ -25,7 +24,7 @@ class _LoginRegisterPageState extends State<LoginRegisterPage> {
               children: [
                 Spacer(),
                 Text(
-                  "Hello, Welcome Back!",
+                  AppStrings.helloWelcome,
                   style: TextStyle(
                     color: Colors.white,
                     fontSize: 22.0,
@@ -36,7 +35,7 @@ class _LoginRegisterPageState extends State<LoginRegisterPage> {
                   height: 15.0,
                 ),
                 Text(
-                  "Login to continue",
+                  AppStrings.loginToContinue,
                   style: TextStyle(color: Colors.white),
                 ),
                 SizedBox(
@@ -44,7 +43,7 @@ class _LoginRegisterPageState extends State<LoginRegisterPage> {
                 ),
                 TextField(
                   decoration: InputDecoration(
-                    hintText: "Username",
+                    hintText: AppStrings.username,
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.all(
                         Radius.circular(22.0),
@@ -59,7 +58,7 @@ class _LoginRegisterPageState extends State<LoginRegisterPage> {
                 ),
                 TextField(
                   decoration: InputDecoration(
-                    hintText: "Password",
+                    hintText: AppStrings.password,
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.all(
                         Radius.circular(22.0),
@@ -79,7 +78,7 @@ class _LoginRegisterPageState extends State<LoginRegisterPage> {
                     style: TextButton.styleFrom(
                       foregroundColor: Colors.white,
                     ),
-                    child: Text("Forget Password?"),
+                    child: Text(AppStrings.forgotPassword),
                   ),
                 ),
                 SizedBox(
@@ -90,19 +89,20 @@ class _LoginRegisterPageState extends State<LoginRegisterPage> {
                   width: double.infinity,
                   child: ElevatedButton(
                     onPressed: () {
-                      Navigator.of(context).pushReplacementNamed('/main');
+                      Navigator.of(context)
+                          .pushReplacementNamed(AppRoutes.main);
                     },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.amber,
                       foregroundColor: Colors.black,
                     ),
-                    child: Text("Log in"),
+                    child: Text(AppStrings.login),
                   ),
                 ),
                 SizedBox(
                   height: 22,
                 ),
-                Text("Or Sig in With?"),
+                Text(AppStrings.orSignInWith),
                 SizedBox(
                   height: 48,
                   child: ElevatedButton(
@@ -124,7 +124,7 @@ class _LoginRegisterPageState extends State<LoginRegisterPage> {
                           height: 22,
                         ),
                         SizedBox(width: 8),
-                        Text("Sign in With Google"),
+                        Text(AppStrings.loginWithGoogle),
                       ],
                     ),
                   ),
@@ -156,7 +156,7 @@ class _LoginRegisterPageState extends State<LoginRegisterPage> {
                         SizedBox(
                           width: 8,
                         ),
-                        Text("Sign in With Facebook"),
+                        Text(AppStrings.loginWithFacebook),
                       ],
                     ),
                   ),
@@ -164,7 +164,7 @@ class _LoginRegisterPageState extends State<LoginRegisterPage> {
                 Row(
                   children: [
                     Text(
-                      "Don't have an Account?",
+                      AppStrings.dontHaveAccount,
                       style: TextStyle(
                         color: Colors.white,
                       ),
@@ -175,7 +175,7 @@ class _LoginRegisterPageState extends State<LoginRegisterPage> {
                         foregroundColor: Colors.amber,
                       ),
                       child: Text(
-                        "Sign Up",
+                        AppStrings.signup,
                         style: TextStyle(
                           decoration: TextDecoration.underline,
                         ),

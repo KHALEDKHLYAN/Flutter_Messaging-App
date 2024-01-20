@@ -3,6 +3,7 @@
 import 'package:blog_app/styles/app_text.dart';
 import 'package:flutter/material.dart';
 import '../components/toolbar.dart';
+import '../config/app_strings.dart';
 
 enum ProfileMenu { edit, logout }
 
@@ -18,9 +19,9 @@ class ProfilePage extends StatelessWidget {
           PopupMenuButton<ProfileMenu>(onSelected: (value) {
             switch (value) {
               case ProfileMenu.edit:
+              Navigator.of(context).pushNamed('/edit_profilepage');
                 break;
               case ProfileMenu.logout:
-                print('log out');
                 break;
               default:
             }
@@ -31,7 +32,7 @@ class ProfilePage extends StatelessWidget {
                 child: Row(
                   children: [
                     Icon(Icons.edit),
-                    Text('Edit'),
+                    Text(AppStrings.edit),
                   ],
                 ),
               ),
@@ -40,7 +41,7 @@ class ProfilePage extends StatelessWidget {
                 child: Row(
                   children: [
                     Icon(Icons.login_outlined),
-                    Text('Login'),
+                    Text(AppStrings.login),
                   ],
                 ),
               )
@@ -50,10 +51,13 @@ class ProfilePage extends StatelessWidget {
       ),
       body: Column(
         children: [
-          Image.asset(
-            'assets/temp/user1.png',
-            width: 200,
-            height: 200,
+          ClipRRect(
+            borderRadius: BorderRadius.all(Radius.circular(16)),
+            child: Image.asset(
+              'assets/temp/user1.png',
+              width: 200,
+              height: 200,
+            ),
           ),
           Text('Khaled Khlyan', style: AppText.header2),
           Text(
