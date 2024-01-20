@@ -28,70 +28,74 @@ class _EditProfilePageState extends State<EditProfilePage> {
         child: Padding(
           padding: const EdgeInsets.all(24.0),
           child: Column(
-              children: [
-                Stack(children: [
-                  Padding(
-                    padding: const EdgeInsets.all(10.0),
-                    child: UserAvatar(
-                      size: 120,
-                    ),
+            children: [
+              Stack(children: [
+                Padding(
+                  padding: const EdgeInsets.all(10.0),
+                  child: UserAvatar(
+                    size: 120,
                   ),
-                  Positioned(
-                    bottom: 0,
-                    right: 0,
-                    child: Container(
-                      padding: EdgeInsets.all(4),
-                      decoration: BoxDecoration(
-                        color: AppColors.primary,
-                        borderRadius: BorderRadius.all(
-                          Radius.circular(6),
-                        ),
-                      ),
-                      child: Icon(
-                        Icons.edit,
-                        size: 20,
-                        color: Colors.black,
+                ),
+                Positioned(
+                  bottom: 0,
+                  right: 0,
+                  child: Container(
+                    padding: EdgeInsets.all(4),
+                    decoration: BoxDecoration(
+                      color: AppColors.primary,
+                      borderRadius: BorderRadius.all(
+                        Radius.circular(6),
                       ),
                     ),
+                    child: Icon(
+                      Icons.edit,
+                      size: 20,
+                      color: Colors.black,
+                    ),
                   ),
-                ]),
-                AppTextField(hint: AppStrings.firstName),
-                SizedBox(
-                  height: 16,
                 ),
-                AppTextField(hint: AppStrings.lastName),
-                SizedBox(
-                  height: 16,
-                ),
-                AppTextField(hint: AppStrings.phoneNumber),
-                SizedBox(
-                  height: 16,
-                ),
-                AppTextField(hint: AppStrings.location),
-                SizedBox(
-                  height: 16,
-                ),
-                SizedBox(
-                  height: 16,
-                ),
-                AppTextField(hint: AppStrings.birthday),
-                Radio(
-                value: Gender.male,
-                groupValue: gender,
-                onChanged: (value) {},
+              ]),
+              AppTextField(hint: AppStrings.firstName),
+              SizedBox(
+                height: 16,
               ),
-              Radio(
-                value: Gender.male,
-                groupValue: gender,
-                onChanged: (value) {},
+              AppTextField(hint: AppStrings.lastName),
+              SizedBox(
+                height: 16,
               ),
-              Radio(
-                value: Gender.male,
-                groupValue: gender,
-                onChanged: (value) {},
+              AppTextField(hint: AppStrings.phoneNumber),
+              SizedBox(
+                height: 16,
               ),
-              ],
+              AppTextField(hint: AppStrings.location),
+              SizedBox(
+                height: 16,
               ),
+              SizedBox(
+                height: 16,
+              ),
+              AppTextField(hint: AppStrings.birthday),
+              Row(
+                children: [
+                  Radio(
+                    value: Gender.male,
+                    groupValue: gender,
+                    onChanged: (value) {},
+                  ),
+                  Radio(
+                    value: Gender.male,
+                    groupValue: gender,
+                    onChanged: (value) {},
+                  ),
+                  Radio(
+                    value: Gender.female,
+                    groupValue: gender,
+                    onChanged: (value) {},
+                  ),
+                ],
+              ),
+            ],
+          ),
         ),
       ),
     );
