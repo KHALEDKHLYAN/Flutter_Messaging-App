@@ -4,6 +4,7 @@ import 'package:blog_app/components/post_items.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import '../components/toolbar.dart';
+import '../config/app_icons.dart';
 import '../config/app_strings.dart';
 
 class HomePage extends StatelessWidget {
@@ -18,7 +19,7 @@ class HomePage extends StatelessWidget {
       appBar: Toolbar(
         title: AppStrings.appName,
         actions: [
-          IconButton(onPressed: (){}, icon: SvgPicture.asset('assets/svg/ic_location.svg'),)
+          IconButton(onPressed: (){}, icon: SvgPicture.asset(AppIcons.icLocation),)
         ],
       ),
       body: ListView.builder(itemBuilder: (context, index) {

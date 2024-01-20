@@ -1,9 +1,11 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
+import 'package:blog_app/config/app_icons.dart';
 import 'package:blog_app/pages/home_page.dart';
 import 'package:blog_app/pages/profile_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import '../config/app_strings.dart';
 
 class MainPage extends StatefulWidget {
   const MainPage({super.key});
@@ -21,24 +23,24 @@ class _MainPageState extends State<MainPage> {
       bottomNavigationBar: BottomNavigationBar(
         items: [
           BottomNavigationBarItem(
-            icon: SvgPicture.asset('assets/svg/ic_home.svg'),
-            label: 'Home',
+            icon: SvgPicture.asset(AppIcons.icHome),
+            label: AppStrings.home,
           ),
           BottomNavigationBarItem(
-            icon: SvgPicture.asset('assets/svg/ic_favorite.svg'),
-            label: 'Favorite',
+            icon: SvgPicture.asset(AppIcons.icFavorite),
+            label: AppStrings.favorites,
           ),
           BottomNavigationBarItem(
-            icon: SvgPicture.asset('assets/svg/ic_add.svg'),
-            label: 'add',
+            icon: SvgPicture.asset(AppIcons.icAdd),
+            label: AppStrings.add,
           ),
           BottomNavigationBarItem(
-            icon: SvgPicture.asset('assets/svg/ic_messages.svg'),
-            label: 'message',
+            icon: SvgPicture.asset(AppIcons.icMessage),
+            label: AppStrings.messages,
           ),
           BottomNavigationBarItem(
-            icon: SvgPicture.asset('assets/svg/ic_user.svg'),
-            label: 'user',
+            icon: SvgPicture.asset(AppIcons.icUser),
+            label: AppStrings.user,
           ),
         ],
         currentIndex: currentIndex,
@@ -54,11 +56,18 @@ class _MainPageState extends State<MainPage> {
       ),
     );
   }
+
   final pages = [
     HomePage(),
-    Center( child: Text('Favorite'),),
-    Center( child: Text('add'),),
-    Center( child: Text('message'),),
+    Center(
+      child: Text(AppStrings.favorites),
+    ),
+    Center(
+      child: Text(AppStrings.add),
+    ),
+    Center(
+      child: Text(AppStrings.messages),
+    ),
     ProfilePage(),
   ];
 }

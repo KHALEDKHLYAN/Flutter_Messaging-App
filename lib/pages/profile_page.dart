@@ -3,6 +3,7 @@
 import 'package:blog_app/styles/app_text.dart';
 import 'package:flutter/material.dart';
 import '../components/toolbar.dart';
+import '../components/user_avatar.dart';
 import '../config/app_strings.dart';
 
 enum ProfileMenu { edit, logout }
@@ -51,14 +52,7 @@ class ProfilePage extends StatelessWidget {
       ),
       body: Column(
         children: [
-          ClipRRect(
-            borderRadius: BorderRadius.all(Radius.circular(16)),
-            child: Image.asset(
-              'assets/temp/user1.png',
-              width: 200,
-              height: 200,
-            ),
-          ),
+          UserAvatar( size: 120,),
           Text('Khaled Khlyan', style: AppText.header2),
           Text(
             'Mombasa 001',
