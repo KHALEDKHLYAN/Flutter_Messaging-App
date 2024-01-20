@@ -1,10 +1,8 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, must_be_immutable
-
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, must_be_immutable, prefer_const_constructors_in_immutables
 import 'package:blog_app/components/app_texfiled.dart';
 import 'package:blog_app/components/toolbar.dart';
 import 'package:blog_app/styles/app_colors.dart';
 import 'package:flutter/material.dart';
-
 import '../components/user_avatar.dart';
 import '../config/app_strings.dart';
 
@@ -77,20 +75,44 @@ class _EditProfilePageState extends State<EditProfilePage> {
               AppTextField(hint: AppStrings.birthday),
               Row(
                 children: [
-                  Radio(
-                    value: Gender.male,
-                    groupValue: gender,
-                    onChanged: (value) {},
+                  Expanded(
+                    child: RadioListTile(
+                      title: Text(AppStrings.male),
+                      value: Gender.male,
+                      groupValue: gender,
+                      contentPadding: EdgeInsets.zero,
+                      onChanged: (value) {
+                        setState((){
+                          gender = Gender.male;
+                        });
+                      },
+                    ),
                   ),
-                  Radio(
-                    value: Gender.male,
-                    groupValue: gender,
-                    onChanged: (value) {},
+                  Expanded(
+                    child: RadioListTile(
+                      title: Text(AppStrings.female),
+                      value: Gender.female,
+                      groupValue: gender,
+                      contentPadding: EdgeInsets.zero,
+                      onChanged: (value) {
+                        setState((){
+                          gender = Gender.female;
+                        });
+                      },
+                    ),
                   ),
-                  Radio(
-                    value: Gender.female,
-                    groupValue: gender,
-                    onChanged: (value) {},
+                  Expanded(
+                    child: RadioListTile(
+                      title: Text(AppStrings.other),
+                      value: Gender.other,
+                      contentPadding: EdgeInsets.zero,
+                      groupValue: gender,
+                      onChanged: (value) {
+                        setState((){
+                          gender = Gender.other;
+                        });
+                      },
+                    ),
                   ),
                 ],
               ),
