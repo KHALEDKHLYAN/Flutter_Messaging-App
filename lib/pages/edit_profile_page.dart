@@ -69,52 +69,78 @@ class _EditProfilePageState extends State<EditProfilePage> {
               SizedBox(
                 height: 16,
               ),
+              AppTextField(hint: AppStrings.birthday),
               SizedBox(
                 height: 16,
               ),
-              AppTextField(hint: AppStrings.birthday),
-              Row(
-                children: [
-                  Expanded(
-                    child: RadioListTile(
-                      title: Text(AppStrings.male),
-                      value: Gender.male,
-                      groupValue: gender,
-                      contentPadding: EdgeInsets.zero,
-                      onChanged: (value) {
-                        setState((){
-                          gender = Gender.male;
-                        });
-                      },
-                    ),
+              Container(
+                decoration: BoxDecoration(
+                  color: AppColors.fieldColor,
+                  borderRadius: BorderRadius.all(
+                    Radius.circular(16),
                   ),
-                  Expanded(
-                    child: RadioListTile(
-                      title: Text(AppStrings.female),
-                      value: Gender.female,
-                      groupValue: gender,
-                      contentPadding: EdgeInsets.zero,
-                      onChanged: (value) {
-                        setState((){
-                          gender = Gender.female;
-                        });
-                      },
+                ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(AppStrings.gender),
+                    Row(
+                      children: [
+                        Expanded(
+                          child: RadioListTile(
+                            title: Text(AppStrings.male),
+                            visualDensity: VisualDensity(
+                              horizontal: VisualDensity.minimumDensity,
+                              vertical: VisualDensity.minimumDensity,
+                            ),
+                            value: Gender.male,
+                            groupValue: gender,
+                            contentPadding: EdgeInsets.zero,
+                            onChanged: (value) {
+                              setState(() {
+                                gender = Gender.male;
+                              });
+                            },
+                          ),
+                        ),
+                        Expanded(
+                          child: RadioListTile(
+                            title: Text(AppStrings.female),
+                            visualDensity: VisualDensity(
+                              horizontal: VisualDensity.minimumDensity,
+                              vertical: VisualDensity.minimumDensity,
+                            ),
+                            value: Gender.female,
+                            groupValue: gender,
+                            contentPadding: EdgeInsets.zero,
+                            onChanged: (value) {
+                              setState(() {
+                                gender = Gender.female;
+                              });
+                            },
+                          ),
+                        ),
+                        Expanded(
+                          child: RadioListTile(
+                            title: Text(AppStrings.other),
+                            visualDensity: VisualDensity(
+                              horizontal: VisualDensity.minimumDensity,
+                              vertical: VisualDensity.minimumDensity,
+                            ),
+                            value: Gender.other,
+                            contentPadding: EdgeInsets.zero,
+                            groupValue: gender,
+                            onChanged: (value) {
+                              setState(() {
+                                gender = Gender.other;
+                              });
+                            },
+                          ),
+                        ),
+                      ],
                     ),
-                  ),
-                  Expanded(
-                    child: RadioListTile(
-                      title: Text(AppStrings.other),
-                      value: Gender.other,
-                      contentPadding: EdgeInsets.zero,
-                      groupValue: gender,
-                      onChanged: (value) {
-                        setState((){
-                          gender = Gender.other;
-                        });
-                      },
-                    ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             ],
           ),
