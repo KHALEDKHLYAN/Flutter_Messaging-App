@@ -2,6 +2,7 @@
 import 'package:blog_app/components/app_texfiled.dart';
 import 'package:blog_app/components/toolbar.dart';
 import 'package:blog_app/styles/app_colors.dart';
+import 'package:blog_app/styles/app_text.dart';
 import 'package:flutter/material.dart';
 import '../components/user_avatar.dart';
 import '../config/app_strings.dart';
@@ -74,6 +75,7 @@ class _EditProfilePageState extends State<EditProfilePage> {
                 height: 16,
               ),
               Container(
+                padding: EdgeInsets.symmetric(horizontal: 12, vertical: 6),
                 decoration: BoxDecoration(
                   color: AppColors.fieldColor,
                   borderRadius: BorderRadius.all(
@@ -83,7 +85,12 @@ class _EditProfilePageState extends State<EditProfilePage> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(AppStrings.gender),
+                    Text(
+                      AppStrings.gender,
+                      style: AppText.body1.copyWith(
+                        fontSize: 12,
+                      ),
+                    ),
                     Row(
                       children: [
                         Expanded(
