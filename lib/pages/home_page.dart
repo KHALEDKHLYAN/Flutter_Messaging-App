@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import '../components/toolbar.dart';
 import '../config/app_icons.dart';
+import '../config/app_routes.dart';
 import '../config/app_strings.dart';
 
 class HomePage extends StatelessWidget {
@@ -19,7 +20,9 @@ class HomePage extends StatelessWidget {
       appBar: Toolbar(
         title: AppStrings.appName,
         actions: [
-          IconButton(onPressed: (){}, icon: SvgPicture.asset(AppIcons.icLocation),)
+          IconButton(onPressed: (){
+            Navigator.of(context).pushNamed(AppRoutes.nearby);
+          }, icon: SvgPicture.asset(AppIcons.icLocation),)
         ],
       ),
       body: ListView.builder(itemBuilder: (context, index) {
